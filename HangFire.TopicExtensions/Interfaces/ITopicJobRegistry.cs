@@ -6,6 +6,6 @@ namespace HangFire.TopicExtensions.Interfaces
     {
         void Register(string topicJobId, MethodInfo method, string topic, string queue);
 
-        void Register(TopicJobInfo recurringJobInfo);
+        void Register(TopicJobInfo topicJobInfo);
     }
 }

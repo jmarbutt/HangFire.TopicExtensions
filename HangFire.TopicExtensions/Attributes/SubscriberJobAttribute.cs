@@ -6,7 +6,7 @@ using Hangfire.States;
 namespace HangFire.TopicExtensions.Attributes
 {
     [AttributeUsage(AttributeTargets.Method)]
-    class SubscriberJobAttribute : Attribute
+    public class SubscriberJobAttribute : Attribute
     {
 
 		public string TopicJobId { get; set; }
