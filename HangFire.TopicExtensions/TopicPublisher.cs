@@ -12,16 +12,16 @@ namespace HangFire.TopicExtensions
     public class TopicPublisher : ITopicPublisher
     {
         private readonly IBackgroundJobClient _backgroundJobClient;
-        private readonly ITopicJobInfoStorage _jobInfoStorage;
+        
         private readonly IServiceProvider _serviceProvider;
 
         public TopicPublisher(
             IBackgroundJobClient backgroundJobClient, 
-            ITopicJobInfoStorage jobInfoStorage,
+            
             IServiceProvider serviceProvider)
         {
             _backgroundJobClient = backgroundJobClient;
-            _jobInfoStorage = jobInfoStorage;
+            
             _serviceProvider = serviceProvider;
         }
 
