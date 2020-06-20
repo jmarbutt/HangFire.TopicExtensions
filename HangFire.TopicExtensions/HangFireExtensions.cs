@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Hangfire;
+using HangFire.TopicExtensions.Configuration;
 using HangFire.TopicExtensions.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -19,6 +20,15 @@ namespace HangFire.TopicExtensions
 
             TopicJob.AddOrUpdate(typesProvider);
             
+            return configuration;
+        }
+
+        public static IGlobalConfiguration UseTopics(this IGlobalConfiguration configuration, IConfigurationProvider provider)
+        {
+            if (provider == null) throw new ArgumentNullException(nameof(provider));
+
+            TopicJob.AddOrUpdate(provider);
+
             return configuration;
         }
 

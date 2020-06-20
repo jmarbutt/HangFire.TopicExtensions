@@ -1,4 +1,5 @@
-﻿using Hangfire;
+﻿using System.Linq;
+using Hangfire;
 using HangFire.TopicExtensions.Interfaces;
 
 namespace HangFire.TopicExtensions
@@ -16,7 +17,10 @@ namespace HangFire.TopicExtensions
 
         public void EnqueueTopic(string topic)
         {
-            
+            var jobs = _jobInfoStorage.FindAll().ToList();
+
+
+
         }
     }
 

@@ -17,9 +17,10 @@ namespace HangFirePubSub.Sample
         {
             services
                 .AddHangfire(x =>
-                    x.UseTopics(typeof(Startup))
+                    x
                         .UseSqlServerStorage(
                             "Data Source=localhost;Initial Catalog=HangfirePubSub;Integrated Security=True")
+                        .UseTopics()
                 );
             services.AddHangfireServer();
             services.AddTopicServices();
