@@ -7,21 +7,16 @@ using HangFire.TopicExtensions.Attributes;
 using HangFire.TopicExtensions.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
+
 namespace HangFire.TopicExtensions
 {
     public class TopicPublisher : ITopicPublisher
     {
-        private readonly IBackgroundJobClient _backgroundJobClient;
-        
+
         private readonly IServiceProvider _serviceProvider;
 
-        public TopicPublisher(
-            IBackgroundJobClient backgroundJobClient, 
-            
-            IServiceProvider serviceProvider)
+        public TopicPublisher(IServiceProvider serviceProvider)
         {
-            _backgroundJobClient = backgroundJobClient;
-            
             _serviceProvider = serviceProvider;
         }
 
@@ -29,7 +24,7 @@ namespace HangFire.TopicExtensions
         {
            
             // Find Subscribers
-            _backgroundJobClient.Enqueue(() => DispatchTopic(topic, context));
+            BackgroundJob.Enqueue(() => DispatchTopic(topic, context));
 
         }
 
@@ -47,7 +42,7 @@ namespace HangFire.TopicExtensions
                 if (!subscribed) continue;
                 
                 var impl = (ISubscriber)ActivatorUtilities.CreateInstance(_serviceProvider,type);
-                _backgroundJobClient.Enqueue(() => impl.Execute(context));
+                BackgroundJob.Enqueue(() => impl.Execute(context));
 
             }
 

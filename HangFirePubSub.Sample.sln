@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HangFirePubSub.Sample", "HangFirePubSub.Sample\HangFirePubSub.Sample.csproj", "{F402127B-A8A9-4AF0-89C0-7CC50555D168}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangFire.TopicExtensions", "HangFire.TopicExtensions\HangFire.TopicExtensions.csproj", "{A0E7E375-A97D-46D4-809A-9440255D69BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangFire.TopicExtensions", "HangFire.TopicExtensions\HangFire.TopicExtensions.csproj", "{1B7A26F2-DED8-4ABC-8FE0-3EC04FE4759E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{F402127B-A8A9-4AF0-89C0-7CC50555D168}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F402127B-A8A9-4AF0-89C0-7CC50555D168}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F402127B-A8A9-4AF0-89C0-7CC50555D168}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A0E7E375-A97D-46D4-809A-9440255D69BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A0E7E375-A97D-46D4-809A-9440255D69BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A0E7E375-A97D-46D4-809A-9440255D69BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A0E7E375-A97D-46D4-809A-9440255D69BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B7A26F2-DED8-4ABC-8FE0-3EC04FE4759E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B7A26F2-DED8-4ABC-8FE0-3EC04FE4759E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B7A26F2-DED8-4ABC-8FE0-3EC04FE4759E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B7A26F2-DED8-4ABC-8FE0-3EC04FE4759E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
