@@ -5,6 +5,7 @@ using System.Reflection;
 using Hangfire;
 using HangFire.TopicExtensions.Attributes;
 using HangFire.TopicExtensions.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace HangFire.TopicExtensions
 {
@@ -12,11 +13,16 @@ namespace HangFire.TopicExtensions
     {
         private readonly IBackgroundJobClient _backgroundJobClient;
         private readonly ITopicJobInfoStorage _jobInfoStorage;
+        private readonly IServiceProvider _serviceProvider;
 
-        public TopicPublisher(IBackgroundJobClient backgroundJobClient, ITopicJobInfoStorage jobInfoStorage)
+        public TopicPublisher(
+            IBackgroundJobClient backgroundJobClient, 
+            ITopicJobInfoStorage jobInfoStorage,
+            IServiceProvider serviceProvider)
         {
             _backgroundJobClient = backgroundJobClient;
             _jobInfoStorage = jobInfoStorage;
+            _serviceProvider = serviceProvider;
         }
 
         public void EnqueueTopic(string topic, object context = null)
@@ -39,8 +45,8 @@ namespace HangFire.TopicExtensions
 
                 var subscribed = attributes.Any(a=> a.Topic.ToLower() == topic);
                 if (!subscribed) continue;
-
-                var impl = (ISubscriber)Activator.CreateInstance(type);
+                
+                var impl = (ISubscriber)ActivatorUtilities.CreateInstance(_serviceProvider,type);
                 _backgroundJobClient.Enqueue(() => impl.Execute(context));
 
             }
