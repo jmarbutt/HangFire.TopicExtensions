@@ -5,7 +5,7 @@ using Hangfire.States;
 
 namespace HangFire.TopicExtensions.Attributes
 {
-    [AttributeUsage(AttributeTargets.Method)]
+    [AttributeUsage(AttributeTargets.Class)]
     public class SubscriberJobAttribute : Attribute
     {
 

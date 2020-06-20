@@ -2,6 +2,6 @@
 {
     public interface ITopicPublisher
     {
-        void EnqueueTopic(string topic);
+        void EnqueueTopic(string topic, object context = null);
     }
 }
