@@ -1,4 +1,5 @@
-﻿using Hangfire.Server;
+﻿using System.Threading.Tasks;
+using Hangfire.Server;
 using HangFire.TopicExtensions.Attributes;
 using HangFire.TopicExtensions.Interfaces;
 using Microsoft.Extensions.Configuration;
@@ -14,7 +15,7 @@ namespace HangFirePubSub.Sample
         {
             _config = config;
         }
-        public void Execute(object context)
+        public async Task Execute(object context)
         {
             
         }

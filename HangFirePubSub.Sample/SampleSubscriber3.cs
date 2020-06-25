@@ -1,4 +1,5 @@
-﻿using HangFire.TopicExtensions.Attributes;
+﻿using System.Threading.Tasks;
+using HangFire.TopicExtensions.Attributes;
 using HangFire.TopicExtensions.Interfaces;
 
 namespace HangFirePubSub.Sample
@@ -6,7 +7,7 @@ namespace HangFirePubSub.Sample
     [SubscriberJob("topic2")]
     public class SampleSubscriber3 : ISubscriber
     {
-        public void Execute(object context)
+        public async Task Execute(object context)
         {
             
         }

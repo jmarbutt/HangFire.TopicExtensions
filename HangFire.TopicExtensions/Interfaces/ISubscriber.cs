@@ -1,7 +1,9 @@
-﻿namespace HangFire.TopicExtensions.Interfaces
+﻿using System.Threading.Tasks;
+
+namespace HangFire.TopicExtensions.Interfaces
 {
     public interface ISubscriber
     {
-        void Execute(object context);
+        Task Execute(object context);
     }
 }
